@@ -1,0 +1,87 @@
+<!--
+  Supabase → Authentication → Email Templates → Confirm signup
+  Subject: Confirm your MyCult email
+
+  The button lands on https://www.my-cult.com/auth/confirm?token_hash=…&type=email
+  That page POSTs the token to Supabase Auth (verifyOtp). Keep {{ .TokenHash }} and type=email intact.
+
+  Also allow https://www.my-cult.com/auth/confirm in Redirect URLs.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>Confirm your MyCult email</title>
+  </head>
+  <body style="margin:0;padding:0;background-color:#f4f6f5;color:#143630;font-family:Arial,Helvetica,sans-serif;">
+    <div style="display:none;max-height:0;overflow:hidden;">
+      Confirm your email to finish creating your MyCult account.
+    </div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f5;padding:32px 16px;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;">
+            <tr>
+              <td style="padding-bottom:20px;font-size:18px;font-weight:700;letter-spacing:-0.02em;color:#143630;">
+                <span style="display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;background-color:#143630;color:#ffffff;border-radius:6px;font-size:13px;margin-right:8px;">M</span>
+                MyCult
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color:#143630;border-radius:16px 16px 0 0;padding:28px 32px;">
+                <p style="margin:0;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#ff4f20;font-weight:700;">
+                  Confirm email
+                </p>
+                <h1 style="margin:10px 0 0;font-size:28px;line-height:1.2;color:#ffffff;font-weight:700;">
+                  You’re almost in.
+                </h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="background-color:#ffffff;border-radius:0 0 16px 16px;padding:32px;border:1px solid #d9d9d9;border-top:0;">
+                <p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#143630;">
+                  Hi{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }},
+                </p>
+                <p style="margin:0 0 24px;font-size:16px;line-height:1.5;color:#143630;">
+                  Confirm your email to finish creating your MyCult account.
+                </p>
+                <table role="presentation" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" bgcolor="#ff4f20" style="border-radius:12px;">
+                      <a
+                        href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email"
+                        target="_blank"
+                        style="display:inline-block;padding:14px 22px;font-size:13px;font-weight:700;letter-spacing:0.02em;color:#ffffff;text-decoration:none;"
+                      >
+                        Confirm email
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+                <p style="margin:24px 0 0;font-size:14px;line-height:1.5;color:#143630;">
+                  If the button doesn’t work, copy this link into your browser:
+                </p>
+                <p style="margin:8px 0 0;font-size:13px;line-height:1.5;word-break:break-all;">
+                  <a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email" style="color:#ff4f20;">
+                    {{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&amp;type=email
+                  </a>
+                </p>
+                <p style="margin:24px 0 0;font-size:14px;line-height:1.5;color:#5c6f6b;">
+                  If you didn’t sign up, you can ignore this message.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 8px 0;font-size:13px;line-height:1.5;color:#5c6f6b;">
+                — MyCult<br />
+                <a href="mailto:support@my-cult.com" style="color:#143630;">support@my-cult.com</a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

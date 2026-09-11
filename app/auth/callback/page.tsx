@@ -8,9 +8,9 @@ import { createClient } from "@/lib/supabase/client";
 function nextPathFromType(type: string | null) {
   if (type === "recovery") return "/auth/reset-password";
   if (type === "signup" || type === "invite" || type === "magiclink" || type === "email") {
-    return "/auth/confirm";
+    return "/auth/confirmed";
   }
-  return "/auth/confirm";
+  return "/auth/confirmed";
 }
 
 export default function AuthCallbackPage() {
