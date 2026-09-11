@@ -1,69 +1,115 @@
-import Image from "next/image";
+import Link from "next/link";
+import { buttonClass } from "@/components/button";
+import { FeatureCard, WalletStack } from "@/components/wallet-stack";
+import { Section, SectionHeading } from "@/components/section";
+import { StoreBadges } from "@/components/store-badges";
+import type { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "MyCult — Your loyalty, unified",
+  description:
+    "One wallet for the places you love. Join programmes with a QR, earn at the till, keep rewards in MyCult.",
+};
+
+const steps = [
+  {
+    index: "01",
+    title: "Join",
+    body: "Scan the business QR or open their link.",
+  },
+  {
+    index: "02",
+    title: "Earn",
+    body: "Pay as usual; staff award points in MyCult.",
+  },
+  {
+    index: "03",
+    title: "Return",
+    body: "Keep balances in your wallet; show your member QR or phone when needed.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <section className="relative overflow-hidden bg-forest text-white">
+        <div className="hero-grid grain absolute inset-0" />
+        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+          <div>
+            <p className="font-display text-5xl leading-none text-ember sm:text-6xl">MyCult</p>
+            <h1 className="mt-4 max-w-xl text-4xl font-bold tracking-tight sm:text-6xl sm:leading-[1.05]">
+              Your loyalty, unified.
+            </h1>
+            <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/75">
+              One app for the cafés and shops you already love—join with a QR, earn at the till,
+              keep it all in your wallet.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/download" className={buttonClass("ember")}>
+                Get the app
+              </Link>
+              <Link href="/businesses" className={buttonClass("ghost")}>
+                For businesses
+              </Link>
+            </div>
+          </div>
+          <div className="float-idle">
+            <WalletStack />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <Section className="bg-canvas">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <SectionHeading
+            title="For members"
+            body="Carry every card in one wallet. Scan to join a programme, earn when you pay, and show who you are when staff ask."
+          />
+          <FeatureCard
+            index="Wallet"
+            title="One place for every programme"
+            body="Join in seconds, earn at the till, and keep each balance with you—no extra plastic."
+          />
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section className="bg-paper">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <FeatureCard
+            index="Counter"
+            title="Award without slowing the queue"
+            body="Staff look up a member, enter the bill, and confirm—points land where they belong."
+          />
+          <SectionHeading
+            title="For businesses"
+            body="Reward regulars without printing another plastic card. Staff look up a member, enter the bill, and confirm—points land where they belong."
+          />
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading title="How it works" />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {steps.map((step) => (
+            <FeatureCard key={step.title} index={step.index} title={step.title} body={step.body} />
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-forest text-white">
+        <div className="max-w-2xl">
+          <p className="font-display text-4xl text-ember">Get MyCult</p>
+          <h2 className="mt-2 text-3xl font-semibold tracking-tight">Available on iOS and Android.</h2>
+          <div className="mt-8">
+            <Link href="/download" className={buttonClass("ember")}>
+              Get the app
+            </Link>
+          </div>
+          <div className="mt-6 text-sm">
+            <StoreBadges invert />
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }
