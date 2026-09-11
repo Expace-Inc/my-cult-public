@@ -21,9 +21,7 @@ const script = Corinthia({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.origin),
-  title: {
-    default: "MyCult — Your loyalty, unified",
-  },
+  title: "MyCult — Your loyalty, unified",
   description:
     "One wallet for the places you love. Join programmes with a QR, earn at the till, keep rewards in MyCult.",
   applicationName: "MyCult",
