@@ -47,22 +47,22 @@ export default function BusinessesPage() {
       <Section className="bg-paper">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-ember">
+            <p className="text-base font-extrabold uppercase tracking-[0.14em] text-ember">
               Talk to us
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight">
+            <h2 className="pop-shadow-soft font-display mt-3 text-4xl leading-[0.95] sm:text-5xl">
               Tell us about your business
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-forest/75">
+            <p className="mt-5 text-xl font-medium leading-relaxed text-forest/75">
               Share a few details and we’ll get back to you. Prefer email? Write to support@my-cult.com.
             </p>
             <TiltCard className="mt-8 hidden lg:block" innerClassName="bg-forest text-white">
               <div className="p-6">
-                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/60">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-white/60">
                   Cashier
                 </p>
-                <p className="mt-3 text-2xl font-semibold">Look up. Enter. Confirm.</p>
-                <div className="mt-6 space-y-3 text-sm text-white/75">
+                <p className="mt-3 text-3xl font-black uppercase leading-none">Look up. Enter. Confirm.</p>
+                <div className="mt-6 space-y-3 text-base font-semibold text-white/75">
                   <div className="flex justify-between rounded-xl bg-white/8 px-4 py-3 ring-1 ring-white/10">
                     <span>Member</span>
                     <span className="tabular text-white">077 123 4567</span>

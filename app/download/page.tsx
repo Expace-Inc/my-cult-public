@@ -20,7 +20,7 @@ export default function DownloadPage() {
         lead="Get the app to join programmes, earn points, and keep your wallet with you."
       >
         <StoreBadges />
-        <p className="mt-6 text-sm text-forest/65">Already installed?</p>
+        <p className="mt-6 text-base font-bold text-forest/65">Already installed?</p>
         <div className="mt-3">
           <OpenAppButton variant="outline" />
         </div>

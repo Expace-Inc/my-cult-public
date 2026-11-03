@@ -50,7 +50,7 @@ export default function AuthConfirmPage() {
 
   return (
     <AuthShell title="Confirming your email…" body="Contacting MyCult to verify this link.">
-      <p className="text-sm text-forest/65">This should only take a moment.</p>
+      <p className="text-base font-medium text-forest/65">This should only take a moment.</p>
     </AuthShell>
   );
 }

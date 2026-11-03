@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { HexField } from "@/components/brand-mark";
 import { buttonClass } from "@/components/button";
 import { FeatureCard, WalletStack } from "@/components/wallet-stack";
 import { Section, SectionHeading } from "@/components/section";
 import { StoreBadges } from "@/components/store-badges";
+import { DisplayWordmark } from "@/components/wordmark";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,13 +36,14 @@ export default function HomePage() {
     <>
       <section className="relative overflow-hidden bg-forest text-white">
         <div className="hero-grid grain absolute inset-0" />
-        <div className="relative mx-auto grid min-h-[calc(100svh-4rem)] max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
+        <HexField className="pointer-events-none absolute inset-0 -scale-x-100 opacity-40 [mask-image:linear-gradient(90deg,black,transparent_55%)] lg:opacity-100" />
+        <div className="relative mx-auto grid min-h-[calc(100svh-4.5rem)] max-w-6xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
           <div>
-            <p className="font-display text-5xl leading-none text-ember sm:text-6xl">MyCult</p>
-            <h1 className="mt-4 max-w-xl text-4xl font-bold tracking-tight sm:text-6xl sm:leading-[1.05]">
+            <DisplayWordmark />
+            <h1 className="pop-shadow font-display mt-6 max-w-xl text-4xl leading-[0.95] text-ember sm:text-6xl">
               Your loyalty, unified.
             </h1>
-            <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-lg text-xl font-medium leading-relaxed text-white/80">
               One app for the cafés and shops you already love—join with a QR, earn at the till,
               keep it all in your wallet.
             </p>
@@ -96,16 +99,17 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section className="bg-forest text-white">
-        <div className="max-w-2xl">
-          <p className="font-display text-4xl text-ember">Get MyCult</p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight">Available on iOS and Android.</h2>
+      <Section className="relative overflow-hidden bg-ember text-white">
+        <HexField className="pointer-events-none absolute inset-0 opacity-40 mix-blend-multiply [mask-image:linear-gradient(270deg,black,transparent_60%)]" />
+        <div className="relative max-w-2xl">
+          <h2 className="pop-shadow font-display text-5xl leading-[0.92] sm:text-7xl">Get MyCult.</h2>
+          <p className="mt-4 text-2xl font-bold">Available on iOS and Android.</p>
           <div className="mt-8">
-            <Link href="/download" className={buttonClass("ember")}>
+            <Link href="/download" className={buttonClass("forest")}>
               Get the app
             </Link>
           </div>
-          <div className="mt-6 text-sm">
+          <div className="mt-6 text-base font-medium">
             <StoreBadges invert />
           </div>
         </div>

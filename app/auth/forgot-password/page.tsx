@@ -41,7 +41,7 @@ export default function ForgotPasswordPage() {
         title="Check your email"
         body="If an account exists for that email, we’ve sent a link. Check your inbox and spam folder."
       >
-        <p className="text-sm text-forest/65">It may take a few minutes to arrive.</p>
+        <p className="text-base font-medium text-forest/65">It may take a few minutes to arrive.</p>
       </AuthShell>
     );
   }
@@ -52,7 +52,7 @@ export default function ForgotPasswordPage() {
       body="Enter the email for your MyCult account. We’ll send a reset link."
     >
       <form onSubmit={onSubmit} className="grid gap-4">
-        <label className="grid gap-1.5 text-[13px] font-medium">
+        <label className="grid gap-2 text-sm font-extrabold uppercase tracking-wide">
           Email
           <input
             type="email"
@@ -60,11 +60,11 @@ export default function ForgotPasswordPage() {
             required
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className="rounded-xl bg-canvas px-3 py-3 text-base font-normal ring-1 ring-mist outline-none focus:ring-2 focus:ring-ember"
+            className="rounded-xl bg-canvas px-4 py-3.5 text-lg font-medium normal-case tracking-normal ring-2 ring-mist outline-none focus:ring-2 focus:ring-ember"
           />
         </label>
         {error ? (
-          <p className="text-sm text-ember" role="alert">
+          <p className="text-base font-bold text-ember" role="alert">
             {error}
           </p>
         ) : null}

@@ -7,7 +7,7 @@
   --color-canvas: #f4f6f5;
   --color-paper: #ffffff;
   --font-sans: var(--font-league-spartan), system-ui, sans-serif;
-  --font-display: var(--font-script), cursive;
+  --font-display: var(--font-league-spartan), system-ui, sans-serif;
 }
 
 :root {
@@ -30,6 +30,22 @@ body {
   color: var(--color-forest);
   font-family: var(--font-sans);
   font-feature-settings: "ss01" on;
+}
+
+/* Heavy caps display type, matching the MYCULT. wordmark. */
+.font-display {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Hard offset shadow from the logo lockup. */
+.pop-shadow {
+  text-shadow: 0.06em 0.06em 0 rgb(8 24 21 / 85%);
+}
+
+.pop-shadow-soft {
+  text-shadow: 0.05em 0.05em 0 rgb(20 54 48 / 14%);
 }
 
 .tabular {

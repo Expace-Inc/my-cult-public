@@ -12,21 +12,21 @@ export function FaqList({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-mist rounded-2xl bg-paper ring-1 ring-mist">
+    <div className="divide-y-2 divide-forest/10 rounded-2xl bg-paper shadow-[6px_6px_0_var(--color-forest)] ring-2 ring-forest">
       {items.map((item, index) => {
         const expanded = open === index;
         return (
           <div key={item.question}>
             <button
               type="button"
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+              className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
               aria-expanded={expanded}
               onClick={() => setOpen(expanded ? null : index)}
             >
-              <span className="text-[17px] font-semibold tracking-tight">{item.question}</span>
+              <span className="text-lg font-extrabold tracking-tight sm:text-xl">{item.question}</span>
               <span
                 className={cn(
-                  "grid h-7 w-7 shrink-0 place-items-center rounded-full bg-canvas text-ember transition-transform duration-200",
+                  "grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ember text-xl font-black text-white transition-transform duration-200",
                   expanded && "rotate-45",
                 )}
                 aria-hidden
@@ -41,7 +41,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
               )}
             >
               <div className="overflow-hidden">
-                <div className="px-5 pb-5 text-base leading-relaxed text-forest/75">
+                <div className="px-6 pb-6 text-lg font-medium leading-relaxed text-forest/75">
                   {item.answer}
                 </div>
               </div>

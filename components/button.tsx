@@ -2,14 +2,15 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   ember:
-    "bg-ember text-white shadow-[0_10px_24px_rgb(255_79_32_/_22%)] hover:bg-[color:var(--color-ember-pressed)]",
-  forest: "bg-forest text-white hover:bg-[color:var(--color-forest-88)]",
+    "bg-ember text-white shadow-[4px_4px_0_rgb(8_24_21_/_85%)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_rgb(8_24_21_/_85%)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-[2px_2px_0_rgb(8_24_21_/_85%)]",
+  forest:
+    "bg-forest text-white shadow-[4px_4px_0_var(--color-ember)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_var(--color-ember)]",
   ghost:
-    "bg-transparent text-white/90 ring-1 ring-white/25 hover:bg-white/8 hover:text-white",
+    "bg-transparent text-white ring-2 ring-white/40 hover:bg-white/10 hover:ring-white",
   quiet:
     "bg-transparent text-forest hover:text-ember underline-offset-4 hover:underline",
   outline:
-    "bg-paper text-forest ring-1 ring-mist hover:ring-forest/30 hover:bg-canvas",
+    "bg-paper text-forest ring-2 ring-forest hover:bg-forest hover:text-white",
 } as const;
 
 export function buttonClass(
@@ -17,7 +18,7 @@ export function buttonClass(
   className?: string,
 ) {
   return cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-[13px] font-semibold tracking-[0.02em] transition-colors duration-200 ease-out",
+    "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[15px] font-extrabold uppercase tracking-[0.04em] transition-[color,background-color,box-shadow,translate] duration-200 ease-out",
     "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ember",
     variants[variant],
     className,

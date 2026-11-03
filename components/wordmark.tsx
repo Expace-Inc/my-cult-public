@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/brand-mark";
 import { cn } from "@/lib/cn";
 
 export function Wordmark({
@@ -13,22 +14,31 @@ export function Wordmark({
   return (
     <Link
       href={href}
+      aria-label="MyCult home"
       className={cn(
-        "inline-flex items-center gap-2 font-semibold tracking-tight",
-        invert ? "text-white" : "text-forest",
+        "inline-flex items-center gap-2.5 text-2xl font-black uppercase leading-none tracking-tight",
+        invert ? "text-mist" : "text-forest",
         className,
       )}
     >
-      <span
-        aria-hidden
-        className={cn(
-          "grid h-7 w-7 place-items-center rounded-md text-[13px] font-bold",
-          invert ? "bg-ember text-white" : "bg-forest text-white",
-        )}
-      >
-        M
+      <BrandMark className="h-8 w-8 shrink-0" color="var(--color-ember)" />
+      <span className="pt-1">
+        MyCult<span className="text-ember">.</span>
       </span>
-      <span>MyCult</span>
     </Link>
+  );
+}
+
+/** Large display lockup echoing assets/mycult-logo.png: heavy caps, hard offset shadow. */
+export function DisplayWordmark({ className }: { className?: string }) {
+  return (
+    <p
+      className={cn(
+        "pop-shadow font-display text-6xl leading-none text-mist sm:text-8xl",
+        className,
+      )}
+    >
+      MyCult<span className="text-ember">.</span>
+    </p>
   );
 }

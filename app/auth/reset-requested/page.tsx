@@ -12,7 +12,7 @@ export default function ResetRequestedPage() {
       title="Check your email"
       body="We sent a password reset link. It may take a few minutes to arrive."
     >
-      <p className="text-sm text-forest/65">Look in spam if you don’t see it shortly.</p>
+      <p className="text-base font-medium text-forest/65">Look in spam if you don’t see it shortly.</p>
     </AuthShell>
   );
 }

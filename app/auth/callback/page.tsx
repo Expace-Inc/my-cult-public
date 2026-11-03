@@ -69,7 +69,7 @@ export default function AuthCallbackPage() {
 
   return (
     <AuthShell title="Signing you in…">
-      <p className="text-sm text-forest/65">{status}</p>
+      <p className="text-base font-medium text-forest/65">{status}</p>
     </AuthShell>
   );
 }

@@ -69,7 +69,7 @@ export default function ResetPasswordPage() {
   if (!ready) {
     return (
       <AuthShell title="Choose a new password" body="Checking your reset link…">
-        <p className="text-sm text-forest/65">One moment.</p>
+        <p className="text-base font-medium text-forest/65">One moment.</p>
       </AuthShell>
     );
   }
@@ -114,7 +114,7 @@ export default function ResetPasswordPage() {
       body="Use at least 8 characters. You’ll use this password to sign in to MyCult."
     >
       <form onSubmit={onSubmit} className="grid gap-4">
-        <label className="grid gap-1.5 text-[13px] font-medium">
+        <label className="grid gap-2 text-sm font-extrabold uppercase tracking-wide">
           New password
           <input
             type="password"
@@ -123,10 +123,10 @@ export default function ResetPasswordPage() {
             required
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            className="rounded-xl bg-canvas px-3 py-3 text-base font-normal ring-1 ring-mist outline-none focus:ring-2 focus:ring-ember"
+            className="rounded-xl bg-canvas px-4 py-3.5 text-lg font-medium normal-case tracking-normal ring-2 ring-mist outline-none focus:ring-2 focus:ring-ember"
           />
         </label>
-        <label className="grid gap-1.5 text-[13px] font-medium">
+        <label className="grid gap-2 text-sm font-extrabold uppercase tracking-wide">
           Confirm password
           <input
             type="password"
@@ -135,11 +135,11 @@ export default function ResetPasswordPage() {
             required
             value={confirm}
             onChange={(event) => setConfirm(event.target.value)}
-            className="rounded-xl bg-canvas px-3 py-3 text-base font-normal ring-1 ring-mist outline-none focus:ring-2 focus:ring-ember"
+            className="rounded-xl bg-canvas px-4 py-3.5 text-lg font-medium normal-case tracking-normal ring-2 ring-mist outline-none focus:ring-2 focus:ring-ember"
           />
         </label>
         {error ? (
-          <p className="text-sm text-ember" role="alert">
+          <p className="text-base font-bold text-ember" role="alert">
             {error}
           </p>
         ) : null}

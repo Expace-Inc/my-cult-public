@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { cn } from "@/lib/cn";
+import { BrandMark } from "./brand-mark";
 import { TiltCard } from "./tilt-card";
 
 const cards = [
@@ -60,21 +61,21 @@ function WalletFace({
     <div className={cn("flex h-52 w-[17.5rem] flex-col justify-between p-5", surface)}>
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.16em] opacity-70">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] opacity-75">
             {stamp}
           </p>
-          <p className="mt-1 text-xl font-semibold tracking-tight">{name}</p>
+          <p className="mt-1 text-2xl font-black uppercase leading-none tracking-tight">{name}</p>
         </div>
         <Stamp label={stamp} />
       </div>
       <div className="flex items-end justify-between">
         <div>
-          <p className="text-[11px] font-medium uppercase tracking-[0.14em] opacity-70">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] opacity-75">
             Balance
           </p>
-          <p className="tabular text-3xl font-semibold leading-none">{points}</p>
+          <p className="tabular text-4xl font-black leading-none">{points}</p>
         </div>
-        <p className="text-[12px] font-medium opacity-70">MyCult</p>
+        <BrandMark className="h-7 w-7 opacity-90" />
       </div>
     </div>
   );
@@ -129,12 +130,16 @@ export function FeatureCard({
   return (
     <TiltCard
       maxTilt={8}
-      innerClassName="h-full bg-paper ring-1 ring-mist shadow-[0_10px_30px_rgb(20_54_48_/_6%)]"
+      innerClassName="h-full bg-paper ring-2 ring-forest shadow-[6px_6px_0_var(--color-forest)]"
     >
-      <div className="flex h-full flex-col gap-4 p-6">
-        <span className="tabular text-[13px] font-semibold text-ember">{index}</span>
-        <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-        <p className="text-base leading-relaxed text-forest/75">{body}</p>
+      <div className="flex h-full flex-col gap-4 p-7">
+        <span className="tabular self-start rounded-lg bg-ember px-2.5 py-1 text-sm font-extrabold uppercase tracking-wide text-white">
+          {index}
+        </span>
+        <h3 className="text-2xl font-black uppercase leading-[1.05] tracking-tight sm:text-[1.75rem]">
+          {title}
+        </h3>
+        <p className="text-lg font-medium leading-relaxed text-forest/75">{body}</p>
       </div>
     </TiltCard>
   );

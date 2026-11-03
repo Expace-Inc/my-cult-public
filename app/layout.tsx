@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Corinthia, League_Spartan } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
@@ -7,15 +7,8 @@ import "./globals.css";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-league-spartan",
-  display: "swap",
-});
-
-const script = Corinthia({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-script",
   display: "swap",
 });
 
@@ -42,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-LK"
-      className={`${leagueSpartan.variable} ${script.variable} h-full antialiased`}
+      className={`${leagueSpartan.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-canvas font-sans text-forest">
         <SiteHeader />

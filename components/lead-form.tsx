@@ -48,26 +48,26 @@ export function LeadForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
       {fields.map((field) => (
-        <label key={field.name} className="grid gap-1.5 text-[13px] font-medium">
+        <label key={field.name} className="grid gap-2 text-sm font-extrabold uppercase tracking-wide">
           {field.label}
           <input
             name={field.name}
             type={field.type}
             required={field.required}
-            className="rounded-xl bg-paper px-3 py-3 text-base font-normal ring-1 ring-mist outline-none focus:ring-2 focus:ring-ember"
+            className="rounded-xl bg-paper px-4 py-3.5 text-lg font-medium normal-case tracking-normal ring-2 ring-mist outline-none focus:ring-2 focus:ring-ember"
           />
         </label>
       ))}
-      <label className="grid gap-1.5 text-[13px] font-medium">
+      <label className="grid gap-2 text-sm font-extrabold uppercase tracking-wide">
         Message
         <textarea
           name="message"
           rows={4}
-          className="resize-y rounded-xl bg-paper px-3 py-3 text-base font-normal ring-1 ring-mist outline-none focus:ring-2 focus:ring-ember"
+          className="resize-y rounded-xl bg-paper px-4 py-3.5 text-lg font-medium normal-case tracking-normal ring-2 ring-mist outline-none focus:ring-2 focus:ring-ember"
         />
       </label>
       {status === "error" ? (
-        <p className="text-sm text-ember" role="alert">
+        <p className="text-base font-bold text-ember" role="alert">
           {message}
         </p>
       ) : null}

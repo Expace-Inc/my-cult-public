@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <article className="mx-auto max-w-2xl px-5 py-16 sm:py-20">
-      <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-forest/55">
+      <p className="text-base font-extrabold uppercase tracking-[0.14em] text-ember">
         Legal
       </p>
       <h1 className="mt-2 text-4xl font-bold tracking-tight">Privacy Policy</h1>
-      <p className="mt-4 text-sm text-forest/55">Last updated 6 September 2026</p>
+      <p className="mt-4 text-base font-medium text-forest/60">Last updated 6 September 2026</p>
       <div className="mt-10 space-y-8 text-base leading-relaxed text-forest/80">
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Who we are</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Who we are</h2>
           <p>
             MyCult operates the MyCult mobile app and this website at {site.origin}. This
             policy explains how we collect, use, and protect information when you use MyCult.
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Data we collect</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Data we collect</h2>
           <p>We may collect:</p>
           <ul className="list-disc space-y-1 pl-5">
             <li>Account details such as email, phone number, and name</li>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
           </ul>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">How we use data</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">How we use data</h2>
           <p>
             We use this information to provide the app, award and display points, keep
             accounts secure, and respond to support requests. We do not sell your personal
@@ -47,7 +47,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Vendors and staff access</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Vendors and staff access</h2>
           <p>
             Businesses on MyCult can see members in their own programme as needed to operate
             loyalty—for example, to look you up at the till and award points. They do not
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Processors</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Processors</h2>
           <p>
             We use trusted processors to host the service and send transactional email or SMS.
             This includes infrastructure and authentication providers such as Supabase. These
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Retention and deletion</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Retention and deletion</h2>
           <p>
             We keep account and loyalty data while your account is active and as needed to
             operate programmes and meet legal duties. To request deletion, email {site.email}{" "}
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Sri Lanka and cross-border processing</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Sri Lanka and cross-border processing</h2>
           <p>
             MyCult is built for use in Sri Lanka. Some processors may store or process data
             outside Sri Lanka. Where that happens, we take steps appropriate to the service
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
           </p>
         </section>
         <section className="space-y-3">
-          <h2 className="text-xl font-semibold text-forest">Contact</h2>
+          <h2 className="text-2xl font-black uppercase tracking-tight text-forest">Contact</h2>
           <p>
             Privacy questions:{" "}
             <a className="text-ember" href={`mailto:${site.email}`}>

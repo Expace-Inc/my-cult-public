@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { markBar, markPath } from "@/components/brand-mark";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -21,43 +22,37 @@ export default function OpenGraphImage() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 16,
-            color: "#ffffff",
-            fontSize: 28,
-            fontWeight: 600,
+            gap: 20,
+            color: "#D9D9D9",
+            fontSize: 44,
+            fontWeight: 900,
+            letterSpacing: -1,
           }}
         >
-          <div
-            style={{
-              width: 44,
-              height: 44,
-              background: "#FF4F20",
-              borderRadius: 10,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 22,
-              fontWeight: 700,
-            }}
-          >
-            M
+          <svg width="56" height="61" viewBox="0 0 100 109" fill="none">
+            <path d={markPath} stroke="#FF4F20" strokeWidth={12} strokeLinejoin="round" />
+            <rect {...markBar} fill="#FF4F20" />
+          </svg>
+          <div style={{ display: "flex" }}>
+            MYCULT<span style={{ color: "#FF4F20" }}>.</span>
           </div>
-          MyCult
         </div>
         <div
           style={{
             marginTop: 36,
-            color: "#ffffff",
-            fontSize: 72,
-            fontWeight: 700,
-            letterSpacing: -2,
-            lineHeight: 1.05,
+            color: "#FF4F20",
+            fontSize: 96,
+            fontWeight: 900,
+            letterSpacing: -3,
+            lineHeight: 0.95,
+            textTransform: "uppercase",
+            textShadow: "6px 6px 0 #081815",
             maxWidth: 820,
           }}
         >
           Your loyalty, unified.
         </div>
-        <div style={{ marginTop: 28, color: "#D9D9D9", fontSize: 28, maxWidth: 720 }}>
+        <div style={{ marginTop: 32, color: "#D9D9D9", fontSize: 36, fontWeight: 700, maxWidth: 760 }}>
           One wallet for the places you love.
         </div>
       </div>
